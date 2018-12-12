@@ -16,15 +16,7 @@ The data available was hosted on a SQL server and was complex its relationships 
 
 Below are  few examples taken of the data to understand the context of the topics included in the technical tickets.  This is the most I am allowed the shared but can say each one was resolved by a different team. 
 
-User unable to connect laptop to hotspot...
-User reports unable to send email from computer...
-User needs help activating phone...
-User needs their password reset ...
-User cannot access a website....
-User is having an issue with logging into the HR enrollment website…
-User is having a freight charge added to an invoice….
-User had a trade automation issue…
-
+![Image](/Images/image5.png)
 
 The data set I was able to extract contained close to 600,000 samples (nearly 6 years of history) and involved 478 unique resolving teams.  Though the data contained 12 features (Ticket ID, Date, ID person opened ticket, etc…), the samples were simplified to include 2 features for this project; The String of Text for Ticket Description and the ID of team whole resolved the ticket.  
 
@@ -64,8 +56,6 @@ Below is the Tensorboard design output for the CNN, including the 4 different ng
 
 Tensorflow's workhorse for convolution is the conv2d function which typically is applied to images, has an 2 array input.  Again, images having an x and y pixel coordinate system, conv2d uses those coordinate as input.   But with words, it is different.  Here we used Y as the embedding per word, and the X as the words in the ticket description.   With an embedding size coming from the Word2Ve, our Y length is 100.    But with X, using the Convolution feature to pool together different ngrams as features with in the CNN, we combine the different pools to create different points of view (features) against the sentences . 
 
-
-
 Again, I am following the Uber example , but think like Hypermeters or Data Set sizes used were not shared.  These I had to learn and experiment with myself.  Things like deciding on a type of data padding method to use (Narrow or Wide), or the Stride size (how much to move the collusion window).  But one thing the article did theorize was the natural migration from a Word based CNN to a Character level CNN.  The thought process was that a Character level would allow for the CNN to be aware of word misspellings.
 
 # References
@@ -80,5 +70,4 @@ https://medium.com/jatana/report-on-text-classification-using-cnn-rnn-han-f0e887
 http://adventuresinmachinelearning.com/word2vec-tutorial-tensorflow/
 
 http://adventuresinmachinelearning.com/python-tensorflow-tutorial/
-
 
